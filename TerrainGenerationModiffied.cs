@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;
-using UnityEditorInternal;
-using UnityEngineInternal;
 
 public class TerrainGenerationModiffied : MonoBehaviour {
 
 
     //Public
     public int NumberOfPasses;
-    public float Zoom;
+    public int Zoom;
     public int MaxHeight;
     public int SeaLevel, SnowCap;
 
@@ -18,14 +15,37 @@ public class TerrainGenerationModiffied : MonoBehaviour {
 
     //Private
     private float[,] HeightMap;
+    Texture2D text;
 
-	void Start () {
+    public TerrainGenerationModiffied(int NoP, int Zoom, int MH, int SL, int SC)
+    {
+        NumberOfPasses = NoP;
+        this.Zoom = Zoom;
+        MaxHeight = MH;
+        SeaLevel = SL;
+        SnowCap = SC;
+        setHeightMap();
+    }
+
+    public void setPrefabs(GameObject l, GameObject w, GameObject s)
+    {
+        Land = l;
+        Water = w;
+        Snow = s;
+    }
+
+    public Texture2D getHeigtMap()
+    {
+        return text;
+    }
+
+	void setHeightMap () {
         int SizeOfArray = (int)(Mathf.Pow(2, NumberOfPasses) + 1);
         HeightMap = new float[SizeOfArray, SizeOfArray];
 
         GenerateMap();
 
-        Texture2D text = new Texture2D(SizeOfArray, SizeOfArray);
+        text = new Texture2D(SizeOfArray, SizeOfArray);
 
         for (int i = 0; i < SizeOfArray; i++)
             for (int j = 0; j < SizeOfArray; j++)
@@ -37,27 +57,7 @@ public class TerrainGenerationModiffied : MonoBehaviour {
         text.Apply();
         text.EncodeToJPG(75);
 
-        GameObject Voxel;
-
-        for (int i = 0; i < SizeOfArray; i++)
-            for (int j = 0; j < SizeOfArray; j++)
-            {
-                
-                int kl = (int)(text.GetPixel(i, j).grayscale * MaxHeight)+1;
-                if (kl < SeaLevel)
-                {
-                    Voxel = Water;
-                    kl = SeaLevel;
-                }
-                else
-                    Voxel = Land;
-                for (int k = 0; k < kl ;k++ )
-                {
-                    if (k > SnowCap)
-                        Voxel = Snow;
-                    Instantiate(Voxel, new Vector3(i,k, j), Quaternion.identity);
-                }
-            }
+        
 	}
 
     private float Smooth(float x, float y)
