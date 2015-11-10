@@ -14,19 +14,21 @@ public class tree : MonoBehaviour {
 	public void genTree(Vector3 start, int depth, int length, int maxHeight, float theta) {
 		if (depth > 0) {
 			Debug.Log ("Depth = " + depth);
-			Vector3 s = buildPart(start,theta, length);
+			Vector3 s = buildPart(start,theta, length, depth);
+			genTree(s, depth - 1, length -1, maxHeight, Random.Range(0, Mathf.PI));
 			genTree(s, depth - 1, length -1, maxHeight, Random.Range(0, Mathf.PI));
 			genTree(s, depth - 1, length -1, maxHeight, Random.Range(0, Mathf.PI));
 			genTree(s, depth - 1, length -1, maxHeight, Random.Range(0, Mathf.PI));
 		}
 	}
-	private Vector3 buildPart(Vector3 start, float theta, int length) {
+	private Vector3 buildPart(Vector3 start, float theta, int length, int scale) {
 		Vector3 end = Vector3.zero;
 		Debug.Log ("Start X = " + start.x);
 		Debug.Log ("Start Y = " + start.y);
+		tree_prefab.transform.localScale = new Vector3((float)scale, (float)scale, (float)scale);
 		Instantiate (tree_prefab, start, Quaternion.identity);
 		for (int i = 1; i < length; i++) {
-			end = new Vector3( (findCos(theta) * i) + start.x, (findSin(theta) * i) + start.y, start.z);
+			end = new Vector3( (findCos(theta) * i) + start.x, (findSin(theta) * i) + start.y, (findCos(theta) * (findSin(theta)) * i) + start.z);
 			Instantiate (tree_prefab, end , Quaternion.identity);
 		}
 		Debug.Log ("End X = " + end.x);
