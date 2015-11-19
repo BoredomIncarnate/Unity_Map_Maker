@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour {
         Vector3 movment = new Vector3(hor, 0, ver);
         movment = transform.rotation * movment;
 
+        
         cc.SimpleMove(movment * Speed);
     }
 
