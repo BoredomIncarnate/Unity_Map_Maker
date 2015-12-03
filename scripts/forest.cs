@@ -31,11 +31,12 @@ public class forest {
 
 	private void SetPoints() {
 		density = density * r; //tmp way of getting number of trees
-		int arrSize = int.Parse (density.ToString ());
-		trees = new point[arrSize];
+        int arrSize = (int)density;
+        trees = new point[arrSize];
 		for (int i = 0; i < trees.Length; i++) {
 			trees[i] = CreatePoint(Random.Range(0, 2 * Mathf.PI));
-			_map.GetPixel(trees[i].x, trees[i].y).r = 255;
+            _map.SetPixel(trees[i].x, trees[i].y, new Color(.1f, _map.GetPixel(trees[i].x, trees[i].y).g, _map.GetPixel(trees[i].x, trees[i].y).b));
+            
 		}
 	}
 
@@ -45,12 +46,12 @@ public class forest {
 	}
 
 	private int GetX(float theta) {
-		int x = (int)((Mathf.Round(Mathf.Cos (theta))) + Random.Range(-r, r));
+		int x = (int)((Mathf.Round(Mathf.Cos (theta))) + Random.Range(-r, r) + start.x);
 		return x;
 	}
 
 	private int GetY(float theta) {
-		int y = (int)((Mathf.Round (Mathf.Sin (theta))) + Random.Range (-r, r));
+		int y = (int)((Mathf.Round (Mathf.Sin (theta))) + Random.Range (-r, r) + start.y);
 		return y;
 	}
 

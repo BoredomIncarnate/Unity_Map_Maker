@@ -26,4 +26,15 @@ public class point {
 		set { this._z = value; }
 		get { return this._z; }
 	}
+
+    public override bool Equals(System.Object obj)
+    {
+        point p = (point)obj;
+        return _x == p.x && _y == p.y && _z == p.z;
+    }
+
+    public override int GetHashCode()
+    {
+        return _x + _y + _z;
+    }
 }
