@@ -1,0 +1,32 @@
+Mono path[0] = 'C:/Users/Jesses/UnityMapMaker/Unity_Map_Maker/Release/Build_Data/Managed'
+Mono path[1] = 'C:/Users/Jesses/UnityMapMaker/Unity_Map_Maker/Release/Build_Data/Mono'
+Mono config path = 'C:/Users/Jesses/UnityMapMaker/Unity_Map_Maker/Release/Build_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/Jesses/UnityMapMaker/Unity_Map_Maker/Release/Build_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55343
+Multi-casting "[IP] 172.26.82.2 [Port] 55343 [Flags] 2 [Guid] 3896201595 [EditorId] 2738368454 [Version] 1048832 [Id] WindowsPlayer(Jesses-Laptop) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [172.26.82.2:55343]
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon(TM) HD 8610G (ID=0x990f)
+    Vendor:   ATI
+    VRAM:     750 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Jesses\UnityMapMaker\Unity_Map_Maker\Release\Build_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Jesses\UnityMapMaker\Unity_Map_Maker\Release\Build_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Jesses\UnityMapMaker\Unity_Map_Maker\Release\Build_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Jesses\UnityMapMaker\Unity_Map_Maker\Release\Build_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Jesses\UnityMapMaker\Unity_Map_Maker\Release\Build_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Jesses\UnityMapMaker\Unity_Map_Maker\Release\Build_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Jesses\UnityMapMaker\Unity_Map_Maker\Release\Build_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Jesses\UnityMapMaker\Unity_Map_Maker\Release\Build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Jesses\UnityMapMaker\Unity_Map_Maker\Release\Build_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  1.034 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Jesses\UnityMapMaker\Unity_Map_Maker\Release\Build_Data\Managed\System.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 2a0 -> priority: 1 
